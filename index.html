@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title  
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    
+    <div class="container">
+       
+      <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Add Event:</h5>
+
+          <div class="input-day">
+            <select onChange="setDay( this.value )"  class="custom-select" id="addDay" aria-label="Example select with button addon">
+              <option selected>Choose Day of the Week...</option>
+              <option  value="Monday">Monday</option>
+              <option  value="Tuesday">Tuesday</option>
+              <option  value="Wednesday">Wednesday</option>
+              <option  value="Thursday">Thursday</option>
+              <option  value="Friday">Friday</option>
+            </select>
+           
+          </div>
+          <div class="input-time">
+            <select onChange="setTime( this.value )" class="custom-select" id="addTime" aria-label="Example select with button addon">
+              <option selected>Choose Time...</option>
+              <option value="9">9AM</option>
+              <option value="10">10AM</option>
+              <option value="11">11AM</option>
+              <option value="12">12PM</option>
+              <option value="13">1PM</option>
+              <option value="14">2PM</option>
+              <option value="15">3PM</option>
+              <option value="16">4PM</option>
+              <option value="17">5PM</option>
+              <option value="18">6PM</option>
+            </select>
+            
+          </div>
+        </div>
+        <button onClick="addEventBtnEl(event)" class="btn btn-outline-secondary">Create an Event</button>
+      </div>
+
+      <div id='booking-card' class="card mt-3" style="width: 500px; margin-left:20px; visibility:hidden;">
+        <div class="card-header">
+          <h3></h3>
+        </div>
+        <div class="card-body">
+          <h5 id="day-block" class="card-title">Special title treatment</h5>
+          <input type="text" name="inputServer" id="saveInput" class="form-control" placeholder="Input Text..." aria-label="text-content" aria-describedby="basic-addon2">
+          <a href="#" id="save" onClick="saveEvent()" class="btn btn-primary">Save</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
