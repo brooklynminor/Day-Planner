@@ -60,5 +60,6 @@ Query selector method is used to return an element that matches the specified se
 var cardEl = document.querySelector("#booking-card");
 ```
 
-
+  ## License
+  [License](https://choosealicense.com/licenses/mit)
 
