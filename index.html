@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title  
+    <title>Work Day Scheduler</title>  
   </head>
 
   <body>
@@ -43,13 +43,24 @@
               <option  value="Wednesday">Wednesday</option>
               <option  value="Thursday">Thursday</option>
               <option  value="Friday">Friday</option>
+              <option  value="Saturday">Saturday</option>
+              <option  value="Sunday">Sunday</option>
             </select>
            
           </div>
           <div class="input-time">
             <select onChange="setTime( this.value )" class="custom-select" id="addTime" aria-label="Example select with button addon">
               <option selected>Choose Time...</option>
-              <option value="9">9AM</option>
+              <option value="00">12AM</option>
+              <option value="01">1AM</option>
+              <option value="02">2AM</option>
+              <option value="03">3PM</option>
+              <option value="04">4AM</option>
+              <option value="05">5AM</option>
+              <option value="06">6AM</option>
+              <option value="07">7AM</option>
+              <option value="08">8AM</option>
+              <option value="09">9AM</option>
               <option value="10">10AM</option>
               <option value="11">11AM</option>
               <option value="12">12PM</option>
@@ -59,6 +70,11 @@
               <option value="16">4PM</option>
               <option value="17">5PM</option>
               <option value="18">6PM</option>
+              <option value="19">7PM</option>
+              <option value="20">8PM</option>
+              <option value="21">9PM</option>
+              <option value="22">10PM</option>
+              <option value="23">11PM</option>
             </select>
             
           </div>
@@ -68,12 +84,12 @@
 
       <div id='booking-card' class="card mt-3" style="width: 500px; margin-left:20px; visibility:hidden;">
         <div class="card-header">
-          <h3></h3>
+          <h3 id="day-block"></h3>
         </div>
         <div class="card-body">
-          <h5 id="day-block" class="card-title">Special title treatment</h5>
-          <input type="text" name="inputServer" id="saveInput" class="form-control" placeholder="Input Text..." aria-label="text-content" aria-describedby="basic-addon2">
-          <a href="#" id="save" onClick="saveEvent()" class="btn btn-primary">Save</a>
+          <h5 id="userToDo" class="card-title"></h5>
+          <input type="text" name="inputServer" id="writeInput" class="form-control" placeholder="Input Text..." aria-label="text-content" aria-describedby="basic-addon2">
+          <button id="saveBtn" onClick="saveEntry()" value="submit" class="btn btn-primary">Save</button>
         </div>
 
       </div>
